@@ -3,25 +3,31 @@
     open Microsoft.Quantum.Intrinsic;
     open Microsoft.Quantum.Canon;
 
-	operation Set (desired: Result, q: Qubit) : Unit {
+	operation Set (desired: Result, q: Qubit) : Unit 
+	{
 		// Read the actual state of the Qubit
-		if (desired != M(q)) {
+		if (desired != M(q)) 
+		{
 			// Flip the state of the qubit if is not the desired one
             X(q);
         }
     }
 
-	operation Measurement (count : Int, initial: Result) : (Int, Int) {
+	operation Measurement (count : Int, initial: Result) : (Int, Int) 
+	{
 		// Variables are rappresented by the 'mutable' type
         mutable numOnes = 0;
-        using (qubit = Qubit()) {
-            for (test in 1..count) {
-			    // Set the Qubit in a knowed initial state
+        using (qubit = Qubit()) 
+		{
+            for (test in 1..count) 
+			{
+			    // Set the Qubit in a knew initial state
                 Set (initial, qubit);
                 let res = M (qubit);
                 // Count the number of ones we saw
-                if (res == One) {
-					// 'Set' operation allow to update the value of a 'mutable' type
+                if (res == One) 
+				{
+					// 'set' operation allow to update the value of a 'mutable' type
                     set numOnes += 1;
                 }
             }
@@ -32,15 +38,19 @@
         return (count-numOnes, numOnes);
     }
 
-	operation Superposition (count : Int, initial: Result) : (Int, Int) {
+	operation Superposition (count : Int, initial: Result) : (Int, Int) 
+	{
         mutable numOnes = 0;
-        using (qubit = Qubit()) {
-            for (test in 1..count) {
+        using (qubit = Qubit()) 
+		{
+            for (test in 1..count) 
+			{
                 Set (initial, qubit);
 				// Allow the superposition for the Qubit using the 'Hadamard' gate
 				H(qubit);
                 let res = M (qubit);
-                if (res == One) {
+                if (res == One) 
+				{
                     set numOnes += 1;
                 }
             }
@@ -49,10 +59,12 @@
         return (count-numOnes, numOnes);
     }
 
-	operation Entanglement (count : Int, initial: Result) : (Int, Int, Int) {
+	operation Entanglement (count : Int, initial: Result) : (Int, Int, Int) 
+	{
         mutable numOnes = 0;
         mutable agree = 0;
-        using ((q0, q1) = (Qubit(), Qubit())) {
+        using ((q0, q1) = (Qubit(), Qubit())) 
+		{
             for (test in 1..count)
             {
                 Set (initial, q0);
@@ -62,10 +74,12 @@
                 CNOT(q0,q1);
                 let res = M (q0);
 				// Count the times that the state of the two Qubit is the same
-                if (M (q1) == res) {
+                if (M (q1) == res) 
+				{
                     set agree += 1;
                 }
-                if (res == One) {
+                if (res == One) 
+				{
                     set numOnes += 1;
                 }
             }
@@ -74,6 +88,5 @@
         }
         return (count-numOnes, numOnes, agree);
     }
-
 
 }
