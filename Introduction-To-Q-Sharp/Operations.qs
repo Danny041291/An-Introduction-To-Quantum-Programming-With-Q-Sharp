@@ -5,7 +5,7 @@
 
 	operation Set (desired: Result, q: Qubit) : Unit 
 	{
-		// Read the actual state of the Qubit
+		// Read the actual state of the qubit
 		if (desired != M(q)) 
 		{
 			// Flip the state of the qubit if is not the desired one
@@ -21,7 +21,7 @@
 		{
             for (test in 1..count) 
 			{
-			    // Set the Qubit in a knew initial state
+			    // Set the qubit in a knew initial state
                 Set (initial, qubit);
                 let res = M (qubit);
                 // Count the number of ones we saw
@@ -31,7 +31,7 @@
                     set numOnes += 1;
                 }
             }
-			// We need to set the used Qubit in the Zero state before release them
+			// We need to set the used qubit in the Zero state before release them
             Set(Zero, qubit);
         }
         // Return number of times we saw a |0> and number of times we saw a |1>
@@ -46,7 +46,7 @@
             for (test in 1..count) 
 			{
                 Set (initial, qubit);
-				// Allow the superposition for the Qubit using the 'Hadamard' gate
+				// Allow the superposition for the qubit using the 'Hadamard' gate
 				H(qubit);
                 let res = M (qubit);
                 if (res == One) 
@@ -70,10 +70,10 @@
                 Set (initial, q0);
                 Set (Zero, q1);
                 H(q0);
-				// Activate the entanglement between the two Qubit
+				// Activate the entanglement between the two qubit
                 CNOT(q0,q1);
                 let res = M (q0);
-				// Count the times that the state of the two Qubit is the same
+				// Count the times that the state of the two qubit is the same
                 if (M (q1) == res) 
 				{
                     set agree += 1;
