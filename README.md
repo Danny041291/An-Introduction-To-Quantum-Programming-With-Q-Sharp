@@ -1,4 +1,4 @@
-# Introduction-To-Q-Sharp
+# An-Introduction-To-Quantum-Programming-With-Q-Sharp
 An introduction to Quantum Programming with Q#
 
 This project is related to the following article: 
