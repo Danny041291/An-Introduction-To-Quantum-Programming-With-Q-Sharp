@@ -5,17 +5,17 @@
 
 	operation Set(desired: Result, q: Qubit) : Unit
 	{
-		// Read the qubit actual state 
+		// Read the qubit state
 		if (desired != M(q)) 
 		{
-			// Flip the qubit state if is not the desired one
+			// Flip the qubit state if it isn't the desired one
             X(q);
         }
     }
 
 	operation Measurement(count: Int, initial: Result) : (Int, Int)
 	{
-		// Variables are rappresented by the 'mutable' type
+		// Variables are represented by the 'mutable' type
         mutable numOnes = 0;
         using (qubit = Qubit()) 
 		{

@@ -11,7 +11,7 @@ namespace Quantum.Introduction_To_Q_Sharp
         static void Run_Measurement(string[] args)
         {
             Console.WriteLine("Running: Measurement Test");
-            // Init the quantum simulator
+            // Initialise the quantum simulator
             using (var qsim = new QuantumSimulator())
             {
                 Result[] initials = { Result.Zero, Result.One };
@@ -29,7 +29,7 @@ namespace Quantum.Introduction_To_Q_Sharp
         static void Run_Superposition(string[] args)
         {
             Console.WriteLine("Running: Superposition Test");
-            // Init the quantum simulator
+            // Initialise the quantum simulator
             using (var qsim = new QuantumSimulator())
             {
                 Result[] initials = { Result.Zero, Result.One };
@@ -47,7 +47,7 @@ namespace Quantum.Introduction_To_Q_Sharp
         static void Run_Entanglement(string[] args)
         {
             Console.WriteLine("Running: Entanglement Test");
-            // Init the quantum simulator
+            // Initialise the quantum simulator
             using (var qsim = new QuantumSimulator())
             {
                 Result[] initials = { Result.Zero, Result.One };
