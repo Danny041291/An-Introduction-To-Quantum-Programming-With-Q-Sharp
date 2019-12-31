@@ -27,7 +27,7 @@
                 // Count the number of |1>
                 if (res == One) 
 				{
-					// The 'set' operation allows to update the 'mutable' type value
+					// The 'set' operation allows updating the 'mutable' type value
                     set numOnes += 1;
                 }
             }
