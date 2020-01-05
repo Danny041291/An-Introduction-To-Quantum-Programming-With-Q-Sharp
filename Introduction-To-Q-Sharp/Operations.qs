@@ -46,7 +46,7 @@
             for (test in 1..count) 
 			{
                 Set (initial, qubit);
-				// Enable the qubit superposition using the 'Hadamard' gate
+				// Enable the qubit superposition by using the 'Hadamard' gate
 				H(qubit);
                 let res = M (qubit);
                 if (res == One) 
