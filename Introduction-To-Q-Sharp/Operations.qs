@@ -31,7 +31,7 @@
                     set numOnes += 1;
                 }
             }
-			// We have to set the used qubit in the Zero state before release it
+			// We have to set the used qubit to the Zero state before release it
             Set(Zero, qubit);
         }
         // Return the number of times that we saw a |0> or a |1>
