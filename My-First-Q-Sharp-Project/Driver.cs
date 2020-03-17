@@ -2,9 +2,8 @@
 using Microsoft.Quantum.Simulation.Core;
 using Microsoft.Quantum.Simulation.Simulators;
 
-namespace Quantum.Introduction_To_Q_Sharp
+namespace Quantum.My_First_Q_Sharp_Project
 {
-
     class Driver
     {
 

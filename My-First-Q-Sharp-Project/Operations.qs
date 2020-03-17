@@ -1,5 +1,5 @@
-﻿namespace Quantum.Introduction_To_Q_Sharp
-{
+﻿namespace Quantum.My_First_Q_Sharp_Project {
+
     open Microsoft.Quantum.Intrinsic;
     open Microsoft.Quantum.Canon;
 
